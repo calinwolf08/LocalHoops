@@ -4,13 +4,12 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <Spinner
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/top_fragment"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/scheduleSpinner"
-        android:layout_weight="0.04"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp" />
+        android:orientation="vertical">
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"

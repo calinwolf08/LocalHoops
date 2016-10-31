@@ -1,4 +1,4 @@
-package com.example.calin.localhoops;
+package com.example.calin.localhoops.Adapters;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+
+import com.example.calin.localhoops.R;
 
 import java.util.HashMap;
 import java.util.List;
@@ -28,8 +30,32 @@ public class ScheduleListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public int getGroupCount() {
-        return 0;
+    public Object getChild(int groupPosition, int childPosition) {
+        return this.scheduleListDetail
+                .get(this.scheduleListTitle.get(groupPosition))
+                .get(childPosition);
+    }
+
+    @Override
+    public long getChildId(int groupPosition, int childPosition) {
+        return childPosition;
+    }
+
+    @Override
+    public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
+        final String scheduleListText = (String) getChild(groupPosition, childPosition);
+
+        if (convertView == null) {
+            LayoutInflater layoutInflater = (LayoutInflater) this.context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = layoutInflater.inflate(R.layout.schedule_list_item, null);
+        }
+
+        TextView scheduleListItem = (TextView) convertView
+                .findViewById(R.id.scheduleListItem);
+        scheduleListItem.setText(scheduleListText);
+
+        return convertView;
     }
 
     @Override
@@ -44,25 +70,13 @@ public class ScheduleListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public Object getChild(int groupPosition, int childPosition) {
-        return this.scheduleListDetail
-                .get(this.scheduleListTitle.get(groupPosition))
-                .get(childPosition);
+    public int getGroupCount() {
+        return this.scheduleListTitle.size();
     }
 
     @Override
     public long getGroupId(int groupPosition) {
         return groupPosition;
-    }
-
-    @Override
-    public long getChildId(int groupPosition, int childPosition) {
-        return childPosition;
-    }
-
-    @Override
-    public boolean hasStableIds() {
-        return false;
     }
 
     @Override
@@ -84,24 +98,12 @@ public class ScheduleListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        final String scheduleListText = (String) getChild(groupPosition, childPosition);
-
-        if (convertView == null) {
-            LayoutInflater layoutInflater = (LayoutInflater) this.context
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.schedule_list_item, null);
-        }
-
-        TextView scheduleListItem = (TextView) convertView
-                .findViewById(R.id.scheduleListItem);
-        scheduleListItem.setText(scheduleListText);
-
-        return convertView;
+    public boolean hasStableIds() {
+        return false;
     }
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return false;
+        return true;
     }
 }

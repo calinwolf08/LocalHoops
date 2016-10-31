@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:text="Game 1 - Northwest Panthers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventTitle"
+        android:textSize="24sp"
+        android:textAlignment="textStart"
+        android:layout_margin="20dp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/detailsTable"
+        android:shrinkColumns="1"
+        android:background="@color/dim_foreground_disabled_material_dark">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/eventDate"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:text="Date:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventDateTitle"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+
+            <TextView
+                android:text="today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventDateText"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/eventLocation"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:text="Location:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventLocationTitle"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+
+            <TextView
+                android:text="Bellevue College"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventLocationText"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/eventTime"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:text="Time:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventTimeTitle"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:elevation="1dp" />
+
+            <TextView
+                android:text="12:30 am"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventTimeText"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/eventDescription"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:text="Decsription:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventDescriptionTitle"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+
+            <TextView
+                android:text="Game 1 of tournament against Northwest Panthers"
+                android:inputType="textMultiLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventDescriptionText"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:text="Notes:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notesTitle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:shrinkColumns="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Coach Kelly:"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/noteAuthor1"
+                    android:layout_margin="10dp" />
+
+                <TextView
+                    android:text="Please arrive 10 minutes early"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/noteText1"
+                    android:layout_margin="10dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Coach Dustin:"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/noteAuthor2"
+                    android:layout_margin="10dp" />
+
+                <TextView
+                    android:text="Focus on getting back on defense and rebounding."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/noteText2"
+                    android:layout_margin="10dp" />
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="15dp">
+
+        <TextView
+            android:text="Attending:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/attendingTitle"
+            android:layout_weight="1" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/attendingSpinner"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+</LinearLayout>
